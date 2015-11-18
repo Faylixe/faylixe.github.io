@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <!-- Facebook API integration layer -->
+    <div id="fb-root"></div>
+    <!-- Page container -->
+    <div class="container">
+      <header>
+        {% include header.html %}
+      </header>
+      {{ content }}
+      <footer>
+        {% include footer.html %}
+      </footer>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>

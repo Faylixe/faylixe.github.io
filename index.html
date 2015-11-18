@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+  <div class="row">
+    <a href="{{ post.url | prepend: site.baseurl }}" class="undecorated">
+      <div class="post_entry">
+        <span class="label label-default">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="title">{{ post.title }}</span>
+      </div>
+    </a>
+  </div>
+{% endfor %}

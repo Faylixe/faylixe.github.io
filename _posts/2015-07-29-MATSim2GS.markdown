@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "MATSim2GS"
+date:   2015-07-29 14:40:28
+categories: java MATSim
+---
+
+MATSim2GS is a Java library that offers an interface between [MATSim](http:/:www.matsim.org)
+network data structure and [GraphStream](http://graphstream-project.org/) required structure.
+To use it just initialize a **NetworkGraphAdapter** object and use it like any other [GraphStream](http://graphstream-project.org/) graph structure :
+
+{% highlight java %}
+final Network network = ...;
+final NetworkGraphAdapter adapter = new NetworkGraphAdapter(network);
+adapter.setAttribute("ui.stylesheet", "node {size : 2px;}");
+adapter.display();
+{% endhighlight %}
+
+Following image shows usage of the library over Zurich city urban network.
+
+<a class="fancybox" href="/download/matsim2gs/zurich.png"><img src="/download/matsim2gs/zurich.png" class="img-responsive img-thumbnail" style="max-width: 300px;" /></a>

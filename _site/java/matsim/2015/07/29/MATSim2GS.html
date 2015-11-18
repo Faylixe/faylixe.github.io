@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MATSim2GS</title>
+  <meta name="description" content="MATSim2GS is a Java library that offers an interface between MATSimnetwork data structure and GraphStream required structure.To use it just initialize a Netw...">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta property="fb:app_id" content="{946589832044167}"/>
+
+  <link rel="canonical" href="/java/matsim/2015/07/29/MATSim2GS.html">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/feed.xml" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="shortcut icon" type="image/png" href="/images/icons/favicon.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+</head>
+
+  <body>
+    <!-- Facebook API integration layer -->
+    <div id="fb-root"></div>
+    <!-- Page container -->
+    <div class="container">
+      <header>
+        <div class="row text-center">
+  <a href="http://faylixe.github.io/">
+      <img class="img-responsive centered" style="max-width: 150px;" src="/images/avatar.png" />
+  </a>
+</div>
+
+      </header>
+      <div class="post">
+
+  <div class="row">
+    <div class="post_entry">
+      <span class="label label-default">Jul 29, 2015</span>
+      <span class="title">MATSim2GS</span>
+    </div>
+  </div>
+
+  <article class="post-content">
+    <p>MATSim2GS is a Java library that offers an interface between <a href="http:/:www.matsim.org">MATSim</a>
+network data structure and <a href="http://graphstream-project.org/">GraphStream</a> required structure.
+To use it just initialize a <strong>NetworkGraphAdapter</strong> object and use it like any other <a href="http://graphstream-project.org/">GraphStream</a> graph structure :</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">final</span> <span class="n">Network</span> <span class="n">network</span> <span class="o">=</span> <span class="o">...;</span>
+<span class="kd">final</span> <span class="n">NetworkGraphAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">NetworkGraphAdapter</span><span class="o">(</span><span class="n">network</span><span class="o">);</span>
+<span class="n">adapter</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">&quot;ui.stylesheet&quot;</span><span class="o">,</span> <span class="s">&quot;node {size : 2px;}&quot;</span><span class="o">);</span>
+<span class="n">adapter</span><span class="o">.</span><span class="na">display</span><span class="o">();</span></code></pre></div>
+
+<p>Following image shows usage of the library over Zurich city urban network.</p>
+
+<p><a class="fancybox" href="/download/matsim2gs/zurich.png"><img src="/download/matsim2gs/zurich.png" class="img-responsive img-thumbnail" style="max-width: 300px;" /></a></p>
+
+  </article>
+
+  <hr></hr>
+  <ul class="social">
+    <li><div class="fb-share-button" data-href="http://faylixe.github.io/java/matsim/2015/07/29/MATSim2GS.html" data-layout="button_count"></div></li>
+    <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%23article+%23Java+%23MATSim+">Tweet</a></li>
+    <li>
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+      <script type="IN/Share" data-url="http://faylixe.github.io/java/matsim/2015/07/29/MATSim2GS.html" data-counter="right"></script>
+    </li>
+  </ul>
+  <hr></hr>
+  <div class="fb-comments" data-href="http://faylixe.github.io/java/matsim/2015/07/29/MATSim2GS.html" data-numposts="5" data-width="100%"></div>
+
+</div>
+
+      <footer>
+        <div class="row text-center">
+  <ul class="undecorated">
+    <li><a target="_blank" href="/download/documents/resume.pdf"><img src="/images/social/cv.png" alt="Resume"/></a></li>
+    <li><a target="_blank" href="https://twitter.com/Faylixe"><img src="/images/social/Twitter.png" alt="Twitter"/></a></li>
+    <li><a target="_blank" href="https://fr.linkedin.com/in/felixvoituret"><img src="/images/social/LinkedIn.png" alt="LinkedIn profile"/></a></li>
+    <li><a target="_blank" href="https://github.com/Faylixe"><img src="/images/social/Github.png" alt="GitHub"/></a></li>
+    <li><a target="_blank" href=""><img src="/images/social/Email.png" alt="E-mail"/></a></li>
+  </ul>
+</div>
+
+      </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Fancybox loading -->
+<link rel="stylesheet" href="/js/jquery.fancybox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+      helpers : {
+        overlay : {
+          css : {
+            'background' : 'rgba(58, 42, 45, 0.95)'
+          }
+        }
+      }
+    });
+	});
+</script>
+
+<!-- Facebook API import -->
+<script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=946589832044167";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- Twitter API import -->
+<script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+
+  </body>
+</html>
