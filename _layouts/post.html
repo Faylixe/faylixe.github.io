@@ -1,29 +1,44 @@
 ---
 layout: default
 ---
-<div class="post">
-
-  <div class="row">
-    <div class="post_entry">
-      <span class="label label-default">{{ page.date | date: "%b %-d, %Y" }}</span>
-      <span class="title">{{ page.title }}</span>
-    </div>
+<div class="row">
+  <div class="post_entry">
+    <span class="label label-default">{{ page.date | date: "%b %-d, %Y" }}</span>
+    <span class="title">{{ page.title }}</span>
   </div>
+</div>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+<article class="post-content">
+  {{ content }}
 
-  <hr></hr>
-  <ul class="social">
-    <li><div class="fb-share-button" data-href="http://faylixe.github.io{{ page.url | prepend: site.baseurl }}" data-layout="button_count"></div></li>
-    <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%23article+%23Java+%23MATSim+">Tweet</a></li>
-    <li>
-      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-      <script type="IN/Share" data-url="http://faylixe.github.io{{ page.url | prepend: site.baseurl }}" data-counter="right"></script>
-    </li>
-  </ul>
-  <hr></hr>
-  <div class="fb-comments" data-href="http://faylixe.github.io{{ page.url | prepend: site.baseurl }}" data-numposts="5" data-width="100%"></div>
+  {% if page.download-section == true %}
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Download</h3>
+        <!-- Checking for GitHub repository link -->
+        {% if page.repository-link != nil %}
+          <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+          <a target="_blank" href="{{ page.repository-link }}">GitHub repository</a>
+        {% endif %}
+        <!-- Checking for downloading link -->
+      </div>
+    </div>
+  {% endif %}
+</article>
+
+<hr></hr>
+
+<ul class="social">
+  <li><div class="fb-share-button" data-href="http://faylixe.github.io{{ page.url | prepend: site.baseurl }}" data-layout="button_count"></div></li>
+  <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%23article+%23Java+%23MATSim+">Tweet</a></li>
+  <li>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+    <script type="IN/Share" data-url="http://faylixe.github.io{{ page.url | prepend: site.baseurl }}" data-counter="right"></script>
+  </li>
+</ul>
+
+<hr></hr>
+
+<div class="fb-comments" data-href="http://faylixe.github.io{{ page.url | prepend: site.baseurl }}" data-numposts="5" data-width="100%"></div>
 
 </div>
