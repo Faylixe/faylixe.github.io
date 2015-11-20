@@ -5,8 +5,6 @@ date:   2015-07-29 14:40:28
 categories: master MATSim OperationResearch
 ---
 
-<br/>
-
 I worked on this project as part of my master degree in software engineering,
 at [Laboratoire de recherche Informatique d’Avignon](http://lia.univ-avignon.fr).
 It consists in applying Operation Research methods, in order to improve cities
