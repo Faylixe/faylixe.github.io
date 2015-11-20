@@ -55,31 +55,12 @@ categories: Java Swing Review
 
 <br/>
 <div class="centered">
-[java]public final class MenuBuilder implements Supplier<JMenu> {
-
-    /** Menu that this builder will fill. **/
-    private final JMenu target;
-
-    /** Private constructor. **/
-    protected MenuBuilder(final String label) {
-        this.target = new JMenu(label);
-    }
-
-    @Override
-    public JMenu get() {
-        return target;
-    }
-
-}[/java]
+  <script src="https://gist.github.com/Faylixe/b4bc013cb81cefeec83e.js"></script>
 </div>
 <br/>
 <p>Now in order to fill our menu, we will add a method for creating a menu item instance using a given <tt>label</tt>, and <a target="_blank" href="http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html">ActionListener</a>, which will be added to the target <a target="_blank" href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html">JMenu</a> :</p>
 <br/>
-[java]public JMenuItem createItem(final String label, final ActionListener listener) {
-    final JMenuItem item = new JMenuItem(label);
-    item.addActionListener(listener);
-    return item;
-}[/java]
+<script src="https://gist.github.com/Faylixe/4ed4f4f776afb9734066.js"></script>
 <br/>
 
 </div>
