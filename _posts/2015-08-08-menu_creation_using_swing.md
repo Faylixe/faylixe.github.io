@@ -5,19 +5,28 @@ date:   2015-08-08 14:40:28
 categories: Java Swing Review
 ---
 
+
 This review aims to introduce functional interface applied to a concrete application : creating menu with graphical API [Swing](https://docs.oracle.com/javase/tutorial/uiswing/).
+
 
 # Application controller
 
-For this review purpose, we will consider a simple application that offers a traditional ``File`` menu, with three actions : ``Open``, ``Save`` and ``Exit``.
+
+For this review purpose, we will consider a simple application that offers a traditional ``File`` menu, with three actions : 
+``Open``, ``Save`` and ``Exit``.
+
 
 With [Swing](https://docs.oracle.com/javase/tutorial/uiswing/), each menu item should be connected to the functional interface [ActionListener](http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html), in order to perform an associated action. Since method reference could be now interpreted as functional interface, we will consider the ``Controller`` interface which provides a functional method for each action it could handle.
 
+
 <script src="https://gist.github.com/Faylixe/0e8a9f92d0791c3a7777.js"></script>
+
 
 # Menu builder
 
+
 To build our menu, we will first setup a dedicated class for building a [JMenu](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html) entry, named ``MenuBuilder``.
+
 
 The following snippet shows our class header. We also made our class implements [Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html) interface as it aims to provide a  [JMenu](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html).
 
@@ -72,5 +81,7 @@ The ``Controller`` implementation will just have to store the given [Runnable](h
 # Download
 
 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> [Controller.java](/download/snippet/menu-creation-with-swing/Controller.java)
+
 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>[MenuBuilder.java](/download/snippet/menu-creation-with-swing/MenuBuilder.java)
+
 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> [MenuBarBuilder.java](/download/snippet/menu-creation-with-swing/MenuBarBuilder.java)
