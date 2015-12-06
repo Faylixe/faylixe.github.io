@@ -1,14 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
+    <title>Faylixe&#39;s blog</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Nov 2015 16:59:15 +0100</pubDate>
-    <lastBuildDate>Wed, 18 Nov 2015 16:59:15 +0100</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Sun, 06 Dec 2015 15:50:21 +0100</pubDate>
+    <lastBuildDate>Sun, 06 Dec 2015 15:50:21 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Menu creation using Swing</title>
+        <description>&lt;p&gt;This review aims to introduce functional interface applied to a concrete application : creating menu with graphical API &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/uiswing/&quot;&gt;Swing&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;application-controller&quot;&gt;Application controller&lt;/h1&gt;
+
+&lt;p&gt;For this review purpose, we will consider a simple application that offers a traditional &lt;code&gt;File&lt;/code&gt; menu, with three actions : &lt;code&gt;Open&lt;/code&gt;, &lt;code&gt;Save&lt;/code&gt; and &lt;code&gt;Exit&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;With &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/uiswing/&quot;&gt;Swing&lt;/a&gt;, each menu item should be connected to the functional interface &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html&quot;&gt;ActionListener&lt;/a&gt;, in order to perform an associated action. Since method reference could be now interpreted as functional interface, we will consider the &lt;code&gt;Controller&lt;/code&gt; interface which provides a functional method for each action it could handle.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Faylixe/0e8a9f92d0791c3a7777.js&quot;&gt;&lt;/script&gt;
+
+&lt;h1 id=&quot;menu-builder&quot;&gt;Menu builder&lt;/h1&gt;
+
+&lt;p&gt;To build our menu, we will first setup a dedicated class for building a &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html&quot;&gt;JMenu&lt;/a&gt; entry, named &lt;code&gt;MenuBuilder&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The following snippet shows our class header. We also made our class implements &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html&quot;&gt;Supplier&lt;/a&gt; interface as it aims to provide a  &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html&quot;&gt;JMenu&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/review/menu-creation-using-swing/menubuilder.png&quot;&gt;
+&lt;img src=&quot;/images/review/menu-creation-using-swing/menubuilder.png&quot; class=&quot;img-responsive img-thumbnail&quot; style=&quot;max-width: 300px;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Faylixe/b4bc013cb81cefeec83e.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Now in order to fill our menu, we will add a method for creating a menu item instance using a given &lt;code&gt;label&lt;/code&gt;, and &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html&quot;&gt;ActionListener&lt;/a&gt;, which will be added to the target &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html&quot;&gt;JMenu&lt;/a&gt; :&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Faylixe/4ed4f4f776afb9734066.js&quot;&gt;&lt;/script&gt;
+
+&lt;h1 id=&quot;menu-bar-builder&quot;&gt;Menu bar builder&lt;/h1&gt;
+
+&lt;p&gt;Finally, we need to setup a component which will be in charge of creating a &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuBar.html&quot;&gt;JMenuBar&lt;/a&gt;, and will only contains the two following atttributes :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference to our application controller (as we will use it to connect item to action).&lt;/li&gt;
+  &lt;li&gt;Target &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuBar.html&quot;&gt;JMenuBar&lt;/a&gt; instance that this builder will fill up.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;alert alert-info&quot;&gt;You can notice that the constructor is set as &lt;b&gt;private&lt;/b&gt;, only a static factory method would be provided later.&lt;/div&gt;
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/review/menu-creation-using-swing/menubarbuilder.png&quot;&gt;
+&lt;img src=&quot;/images/review/menu-creation-using-swing/menubarbuilder.png&quot; class=&quot;img-responsive img-thumbnail&quot; style=&quot;max-width: 300px;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then creating a menu will be as simple as following, we only have to use the previously defined &lt;code&gt;MenuBuilder&lt;/code&gt; class, with method reference from our &lt;code&gt;Controller&lt;/code&gt; instance as &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html&quot;&gt;ActionListener&lt;/a&gt; for creating menu entry :&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Faylixe/9f70951e3501b3d4d960.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Last step, we have to define a static factory method for using our class which will prevent from misusage. Here we only have one menu, but you could add method as much as menu you have.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Faylixe/88ca1f0082ef24f29a13.js&quot;&gt;&lt;/script&gt;
+
+&lt;h1 id=&quot;bonus--item-delayed-activation&quot;&gt;Bonus : Item delayed activation&lt;/h1&gt;
+
+&lt;p&gt;Our menu is working, but let’s improve it. Imagine you want to set the &lt;code&gt;Save&lt;/code&gt; item disabled until a file has been opened. To do so, we will use the method you probably have noticed while looking the UML class diagram for the &lt;code&gt;MenuBuilder&lt;/code&gt; : &lt;code&gt;createActivable([String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html), [ActionListener](http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html))&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This method creates a &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuItem.html&quot;&gt;JMenuItem&lt;/a&gt; by calling the &lt;code&gt;createItem([String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html), [ActionListener](http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html))&lt;/code&gt; method, and then returns a &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html&quot;&gt;Runnable&lt;/a&gt; object :&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Faylixe/4f823121e559bbb2e12c.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;As you can see, the returned &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html&quot;&gt;Runnable&lt;/a&gt; instance is only enabling the associated menu item, and could then be used in order to activate the entry. To integrate this behavior for the &lt;code&gt;Save&lt;/code&gt; item, we will update our &lt;code&gt;Controller&lt;/code&gt; interface, and make it extends &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html&quot;&gt;Consumer&lt;/a&gt; for &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html&quot;&gt;Runnable&lt;/a&gt; type :&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Faylixe/adb10f84b0b5dd85bbd2.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;And use the associated &lt;code&gt;[accept(Runnable)](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html#accept-T-)&lt;/code&gt; method into the file menu creation :&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Faylixe/1903c2249384d048bfbf.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;The &lt;code&gt;Controller&lt;/code&gt; implementation will just have to store the given &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html&quot;&gt;Runnable&lt;/a&gt; and call it during the &lt;code&gt;open([ActionEvent](https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionEvent.html))&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;h1 id=&quot;download&quot;&gt;Download&lt;/h1&gt;
+
+&lt;p&gt;&lt;span class=&quot;glyphicon glyphicon-download-alt&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; &lt;a href=&quot;/download/snippet/menu-creation-with-swing/Controller.java&quot;&gt;Controller.java&lt;/a&gt;
+&lt;span class=&quot;glyphicon glyphicon-download-alt&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;a href=&quot;/download/snippet/menu-creation-with-swing/MenuBuilder.java&quot;&gt;MenuBuilder.java&lt;/a&gt;
+&lt;span class=&quot;glyphicon glyphicon-download-alt&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; &lt;a href=&quot;/download/snippet/menu-creation-with-swing/MenuBarBuilder.java&quot;&gt;MenuBarBuilder.java&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Aug 2015 16:40:28 +0200</pubDate>
+        <link>/java/swing/review/2015/08/08/menu-creation-using-swing.html</link>
+        <guid isPermaLink="true">/java/swing/review/2015/08/08/menu-creation-using-swing.html</guid>
+        
+        
+        <category>Java</category>
+        
+        <category>Swing</category>
+        
+        <category>Review</category>
+        
+      </item>
+    
+      <item>
+        <title>New localization dynamics for households and activities into urban area</title>
+        <description>&lt;p&gt;I worked on this project as part of my master degree in software engineering,
+at &lt;a href=&quot;http://lia.univ-avignon.fr&quot;&gt;Laboratoire de recherche Informatique d’Avignon&lt;/a&gt;.
+It consists in applying Operation Research methods, in order to improve cities
+accessibility and reducing automobile dependencies.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;glyphicon glyphicon-file&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; &lt;a href=&quot;/download/documents/master.thesis.pdf&quot;&gt;Master thesis (French)&lt;/a&gt; &lt;br /&gt;
+&lt;span class=&quot;glyphicon glyphicon-file&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; &lt;a href=&quot;http://tra2014.traconference.eu/papers/pdfs/TRA2014_Fpaper_20017.pdf&quot;&gt;TRA2014 Publication (english)&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 29 Jul 2015 16:40:28 +0200</pubDate>
+        <link>/master/matsim/operationresearch/2015/07/29/master-thesis.html</link>
+        <guid isPermaLink="true">/master/matsim/operationresearch/2015/07/29/master-thesis.html</guid>
+        
+        
+        <category>master</category>
+        
+        <category>MATSim</category>
+        
+        <category>OperationResearch</category>
+        
+      </item>
     
       <item>
         <title>MATSim2GS</title>
@@ -28,13 +140,13 @@ To use it just initialize a &lt;strong&gt;NetworkGraphAdapter&lt;/strong&gt; obj
 &lt;p&gt;Following image shows usage of the library over Zurich city urban network.&lt;/p&gt;
 </description>
         <pubDate>Wed, 29 Jul 2015 16:40:28 +0200</pubDate>
-        <link>/java/matsim/2015/07/29/MATSim2GS.html</link>
-        <guid isPermaLink="true">/java/matsim/2015/07/29/MATSim2GS.html</guid>
+        <link>/java/matsim/2015/07/29/matsim2gs.html</link>
+        <guid isPermaLink="true">/java/matsim/2015/07/29/matsim2gs.html</guid>
         
         
         <category>java</category>
         
-        <category>matsim</category>
+        <category>MATSim</category>
         
       </item>
     

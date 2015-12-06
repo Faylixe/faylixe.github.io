@@ -9,7 +9,7 @@ This review aims to introduce functional interface applied to a concrete applica
 
 # Application controller
 
-For this review purpose, we will consider a simple application that offers a traditional <tt>File</tt> menu, with three actions : ``Open``, ``Save`` and ``Exit``.
+For this review purpose, we will consider a simple application that offers a traditional ``File`` menu, with three actions : ``Open``, ``Save`` and ``Exit``.
 
 With [Swing](https://docs.oracle.com/javase/tutorial/uiswing/), each menu item should be connected to the functional interface [ActionListener](http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html), in order to perform an associated action. Since method reference could be now interpreted as functional interface, we will consider the ``Controller`` interface which provides a functional method for each action it could handle.
 
@@ -34,10 +34,10 @@ Now in order to fill our menu, we will add a method for creating a menu item ins
 
 Finally, we need to setup a component which will be in charge of creating a [JMenuBar](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuBar.html), and will only contains the two following atttributes :
 
-* Reference to our application controller (as we will use it to connect item to action).</li>
+* Reference to our application controller (as we will use it to connect item to action).
 * Target [JMenuBar](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuBar.html) instance that this builder will fill up.
 
-<div class="alert alert-info">You can notice that the constructor is set as **private**, only a static factory method would be provided later.</div>
+<div class="alert alert-info">You can notice that the constructor is set as <b>private</b>, only a static factory method would be provided later.</div>
 </div>
 
 <a href="/images/review/menu-creation-using-swing/menubarbuilder.png">
