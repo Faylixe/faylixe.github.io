@@ -7,10 +7,11 @@ categories: Java Swing Review
 
 This review aims to introduce functional interface applied to a concrete application : creating menu with graphical API [Swing](https://docs.oracle.com/javase/tutorial/uiswing/).
 
-<br></br>
 
 # Application controller
 
+
+<br>
 
 For this review purpose, we will consider a simple application that offers a traditional ``File`` menu, with three actions :
 ``Open``, ``Save`` and ``Exit``.
