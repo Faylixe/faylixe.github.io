@@ -71,17 +71,6 @@ a:hover {
 	color: white;
 }
 
-/** **/
-
-.gist {
-  width: 500px !important;
-}
-.gist-file
-.gist-data {
-  max-height: 500px;
-  max-width: 500px;
-}
-
 /** Footer list formatting *******************************/
 
 a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
