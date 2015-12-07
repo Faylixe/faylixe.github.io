@@ -13,25 +13,11 @@ Since May 2015, Google authentification protocol [ClientLogin](https://developer
 
 Following dependency could be added to your *POM.xml* if you want to use the client API into your project.
 
-```xml
-<dependency>
-    <groupId>fr.faylixe</groupId>
-    <artifactId>googlecodejam-client</artifactId>
-    <version>1.1.1</version>
-</dependency>
-```
+<script src="https://gist.github.com/Faylixe/d2f3e11197b8bdd94fcd.js"></script>
+
 The API entry point is the [CodeJamSession](http://faylixe.fr/googlecodejam-client/apidocs/fr/faylixe/googlecodejam/client/CodeJamSession.html) class, which could be instantiated as following :
 
-```java
-// Initializes required HTTPRequestExecutor.
-final HttpTransport transport = new NetHttpTransport();
-final HttpRequestFactory factory = transport.createRequestFactory();
-final HTTPRequestExecutor executor = new HTTPRequestExecutor(CODEJAM_HOSTNAME, factory);
-// Retrieves Round.
-final Round round = ...;
-// Creates session.
-final CodeJamSession session = CodeJamSession.createSession(executor, round);
-```
+<script src="https://gist.github.com/Faylixe/d662a59ff7e81e19fddc.js"></script>
 
 The session could be then used to retrieve contest information, problem description and analysis, download input file
 as submit solution as well. You can check the [javadoc](http://faylixe.fr/googlecodejam-client/apidocs) to get more informations.
