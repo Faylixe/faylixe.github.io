@@ -9,7 +9,7 @@ This review aims to introduce functional interface applied to a concrete applica
 
 <br>
 
-# Application controller
+## Application controller
 
 <br>
 
@@ -26,7 +26,7 @@ With [Swing](https://docs.oracle.com/javase/tutorial/uiswing/), each menu item s
 
 <br>
 
-# Menu builder
+## Menu builder
 
 <br>
 
@@ -52,7 +52,7 @@ Now in order to fill our menu, we will add a method for creating a menu item ins
 
 <br>
 
-# Menu bar builder
+## Menu bar builder
 
 <br>
 
@@ -71,7 +71,7 @@ Finally, we need to setup a component which will be in charge of creating a [JMe
 
 <br>
 
-<div class="alert alert-info">You can notice that the constructor is set as <b>private</b>, only a static factory method would be provided later.</div>
+ <div class="alert alert-info">You can notice that the constructor is set as <b>private</b>, only a static factory method would be provided later.</div>
 
 <br>
 
@@ -91,7 +91,7 @@ Last step, we have to define a static factory method for using our class which w
 
 <br>
 
-# Bonus : Item delayed activation
+## Bonus : Item delayed activation
 
 <br>
 
@@ -125,7 +125,7 @@ The ``Controller`` implementation will just have to store the given [Runnable](h
 
 <br>
 
-# Download
+## Download
 
 <br>
 
