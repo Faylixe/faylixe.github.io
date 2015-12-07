@@ -82,9 +82,9 @@ Last step, we have to define a static factory method for using our class which w
 
 <br>
 
-Our menu is working, but let's improve it. Imagine you want to set the ``Save`` item disabled until a file has been opened. To do so, we will use the method you probably have noticed while looking the UML class diagram for the ``MenuBuilder`` : ``createActivable([String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html), [ActionListener](http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html))``.
+Our menu is working, but let's improve it. Imagine you want to set the ``Save`` item disabled until a file has been opened. To do so, we will use the method you probably have noticed while looking the UML class diagram for the ``MenuBuilder`` : ``createActivable(String, ActionListener)``.
 
-This method creates a [JMenuItem](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuItem.html) by calling the ``createItem([String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html), [ActionListener](http://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html))`` method, and then returns a [Runnable](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) object :
+This method creates a [JMenuItem](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuItem.html) by calling the ``createItem(String, ActionListener)`` method, and then returns a [Runnable](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) object :
 
 <br>
 
@@ -100,7 +100,7 @@ As you can see, the returned [Runnable](https://docs.oracle.com/javase/8/docs/ap
 
 <br>
 
-And use the associated ``[accept(Runnable)](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html#accept-T-)`` method into the file menu creation :
+And use the associated ``accept(Runnable)`` method into the file menu creation :
 
 <br>
 
@@ -108,10 +108,14 @@ And use the associated ``[accept(Runnable)](https://docs.oracle.com/javase/8/doc
 
 <br>
 
-The ``Controller`` implementation will just have to store the given [Runnable](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) and call it during the ``open([ActionEvent](https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionEvent.html))`` method.
+The ``Controller`` implementation will just have to store the given [Runnable](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) and call it during the ``open(ActionEvent)`` method.
+
+<br>
 
 # Download
 
+<br>
+
 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> [Controller.java](/download/snippet/menu-creation-with-swing/Controller.java) <br>
-<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>[MenuBuilder.java](/download/snippet/menu-creation-with-swing/MenuBuilder.java) <br>
+<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> [MenuBuilder.java](/download/snippet/menu-creation-with-swing/MenuBuilder.java) <br>
 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> [MenuBarBuilder.java](/download/snippet/menu-creation-with-swing/MenuBarBuilder.java) <br>
