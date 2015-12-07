@@ -53,11 +53,15 @@ Now in order to fill our menu, we will add a method for creating a menu item ins
 
 Finally, we need to setup a component which will be in charge of creating a [JMenuBar](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuBar.html), and will only contains the two following atttributes :
 
+<br>
+
 * Reference to our application controller (as we will use it to connect item to action).
 * Target [JMenuBar](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuBar.html) instance that this builder will fill up.
 
+<br>
+
 <div class="alert alert-info">You can notice that the constructor is set as <b>private</b>, only a static factory method would be provided later.</div>
-</div>
+
 
 <a href="/images/review/menu-creation-using-swing/menubarbuilder.png">
 <img src="/images/review/menu-creation-using-swing/menubarbuilder.png" class="img-responsive img-thumbnail" style="max-width: 300px;" /></a>
