@@ -31,7 +31,7 @@ With [Swing](https://docs.oracle.com/javase/tutorial/uiswing/), each menu item s
 To build our menu, we will first setup a dedicated class for building a [JMenu](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html) entry, named ``MenuBuilder``. The following snippet shows our class header. We also made our class implements [Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html) interface as it aims to provide a  [JMenu](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html).
 
 <a href="/images/review/menu-creation-using-swing/menubuilder.png">
-<img src="/images/review/menu-creation-using-swing/menubuilder.png" class="img-responsive img-thumbnail" style="max-width: 300px;" /></a>
+<img src="/images/review/menu-creation-using-swing/menubuilder.png" class="img-responsive img-thumbnail" /></a>
 
 <br>
 
@@ -61,7 +61,6 @@ Finally, we need to setup a component which will be in charge of creating a [JMe
 <br>
 
 <div class="alert alert-info">You can notice that the constructor is set as <b>private</b>, only a static factory method would be provided later.</div>
-
 
 <a href="/images/review/menu-creation-using-swing/menubarbuilder.png">
 <img src="/images/review/menu-creation-using-swing/menubarbuilder.png" class="img-responsive img-thumbnail" style="max-width: 300px;" /></a>
