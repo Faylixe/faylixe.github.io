@@ -11,7 +11,7 @@ Since May 2015, Google authentification protocol [ClientLogin](https://developer
 
 <br>
 
-## Maven dependency
+### Maven dependency
 
 <br>
 
@@ -36,15 +36,13 @@ as submit solution as well. You can check the [javadoc](http://faylixe.fr/google
 
 <br>
 
-## Command line application
+### Command line application
 
 <br>
 
 A command line application which consists in the client JAR and a running script is also available. Here is the usage description :
 
-```bash
-codejam action parameter
-```
+``codejam action parameter``
 
 Where action belongs to the following option list :
 
@@ -56,9 +54,11 @@ Where action belongs to the following option list :
 
 You can install script and packaged version of client by running the following command :
 
-```bash
-wget -O - https://raw.githubusercontent.com/Faylixe/googlecodejam-client/master/scripts/install | bash
-```
+<br>
+
+<script src="https://gist.github.com/Faylixe/075db81c233a6f22aa7d.js"></script>
+
+<br>
 
 Once script has been executed, you can run the **codejam** command. Please note that installation script should be ran under root permission.
 
@@ -69,9 +69,7 @@ in order to authenticate to Google services. Once Firefox is opened and the logi
 please proceed to the authentication process, and when you will be logged and redirected
 to the code jam home page, Firefox will be closed automatically.
 
-```bash
-codejam --init
-```
+``codejam --init``
 
 Once logged you will be prompted to choose a contest and a round. Those will become contextual round and session
 for the current directory you are running the script in, meaning that if you run another time the script with another
@@ -85,20 +83,19 @@ choosen (usually 4 minutes for a *small* input, 8 for a *large* one).
 
 The following exemple will download the *small* input file for the first problem.
 
-```bash
-codejam --download --problem A --inputtype small
-```
+``codejam --download --problem A --inputtype small``
 
 If the download is successful, the name of the downloaded file will be printed, so it could be chained in a command workflow, for example :
 
-```bash
-cat < `codejam --download --problem A --inputtype small` | python A.py
-```
+<br>
+
+<script src="https://gist.github.com/Faylixe/1f4ea1e450a7c054dd8c.js"></script>
+
+<br>
+
 ### Submit action
 
 Once input file is downloaded, and algorithm solved all test cases, *submit* action could be used in order
 to send either the output file as the source file of your algorithm as well.
 
-```bash
-codejam --submit --problem A --inputtype small --output path/to/output --sourcefile path/to/sourcefile
-```
+``codejam --submit --problem A --inputtype small --output path/to/output --sourcefile path/to/sourcefile``
