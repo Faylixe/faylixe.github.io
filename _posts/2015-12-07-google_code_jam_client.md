@@ -7,6 +7,8 @@ download-section: true
 repository-link: https://github.com/Faylixe/googlecodejam-client
 ---
 
+<br>
+
 Since May 2015, Google authentification protocol [ClientLogin](https://developers.google.com/identity/protocols/AuthForInstalledApps) is officially not supported anymore, which implies that the only command line tools for [Google Code Jam](https://code.google.com/codejam) contest is not working and deprecated. The Google Code Jam API aims to be a valid alternative to this obsolete client. Implemented in Java, it could be use by any application, or as a single command line application.
 
 <br>
@@ -50,7 +52,11 @@ Where action belongs to the following option list :
 * *--download*
 * *--submit*
 
+<br>
+
 ### Installation
+
+<br>
 
 You can install script and packaged version of client by running the following command :
 
@@ -62,7 +68,11 @@ You can install script and packaged version of client by running the following c
 
 Once script has been executed, you can run the **codejam** command. Please note that installation script should be ran under root permission.
 
+<br>
+
 ### Initialization action
+
+<br>
 
 This action does not take any parameters, and will open up a Firefox instance
 in order to authenticate to Google services. Once Firefox is opened and the login page loaded,
@@ -75,7 +85,11 @@ Once logged you will be prompted to choose a contest and a round. Those will bec
 for the current directory you are running the script in, meaning that if you run another time the script with another
 action, it will use the created contextual logged session and round.
 
+<br>
+
 ### Download action
+
+<br>
 
 As it name suggests, the *download* action allows logged user to download an input file for a given problem.
 If the contest is active, then it will trigger the submission timer depending of the input difficulty you have
@@ -94,6 +108,8 @@ If the download is successful, the name of the downloaded file will be printed, 
 <br>
 
 ### Submit action
+
+<br>
 
 Once input file is downloaded, and algorithm solved all test cases, *submit* action could be used in order
 to send either the output file as the source file of your algorithm as well.
