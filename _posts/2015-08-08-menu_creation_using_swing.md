@@ -65,11 +65,13 @@ Finally, we need to setup a component which will be in charge of creating a [JMe
 
 <br>
 
-<div class="alert alert-info">You can notice that the constructor is set as <b>private</b>, only a static factory method would be provided later.</div>
-
 <p align="center">
   <img src="/images/review/menu-creation-using-swing/menubarbuilder.png" class="img-responsive" />
 </p>
+
+<br>
+
+<div class="alert alert-info">You can notice that the constructor is set as <b>private</b>, only a static factory method would be provided later.</div>
 
 <br>
 
