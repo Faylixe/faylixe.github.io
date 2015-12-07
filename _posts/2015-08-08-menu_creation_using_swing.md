@@ -32,6 +32,9 @@ With [Swing](https://docs.oracle.com/javase/tutorial/uiswing/), each menu item s
 
 To build our menu, we will first setup a dedicated class for building a [JMenu](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html) entry, named ``MenuBuilder``. The following snippet shows our class header. We also made our class implements [Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html) interface as it aims to provide a  [JMenu](http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html).
 
+<br>
+->![MenuBuilder class diagram](/images/review/menu-creation-using-swing/menubuilder.png)><-
+
 <p align="center">
   <img src="/images/review/menu-creation-using-swing/menubuilder.png" />
 </p>
