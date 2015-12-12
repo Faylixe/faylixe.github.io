@@ -41,4 +41,13 @@ layout: default
 
 <div class="fb-comments" data-href="http://faylixe.github.io{{ page.url | prepend: site.baseurl }}" data-numposts="5" data-width="100%"></div>
 
+<div class="row">
+  <div class="post_entry">
+    <span class="label label-default">Tags :</span>
+    {% for tag in page.tags %}
+      <span class="label label-primary">{{ tag }}</span>
+    {% endfor %}
+  </div>
+</div>
+
 </div>
