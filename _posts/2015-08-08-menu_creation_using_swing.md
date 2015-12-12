@@ -3,6 +3,7 @@ layout: post
 title:  "Menu creation using Swing"
 date:   2015-08-08 14:40:28
 tags: [java, swing, review]
+tweet: "#java 8 functional interface applied to #swing"
 ---
 
 This review aims to introduce functional interface applied to a concrete application : creating menu with graphical API [Swing](https://docs.oracle.com/javase/tutorial/uiswing/).

@@ -5,6 +5,7 @@ date: 2015-12-07 12:28:00
 tags: [api, java, maven, googlecodejam]
 download-section: true
 repository-link: https://github.com/Faylixe/googlecodejam-client
+tweet: "An operational #java API for @googlecodejam contest"
 ---
 
 <br>
