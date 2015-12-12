@@ -73,6 +73,11 @@ a:hover {
 
 /** Footer list formatting *******************************/
 
+.undecorated {
+    padding: 0;
+    -webkit-padding-start: 0;
+}
+
 a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 	text-decoration: none;
 }
