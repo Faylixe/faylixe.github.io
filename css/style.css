@@ -73,7 +73,7 @@ a:hover {
 
 /** Footer list formatting *******************************/
 
-.undecorated {
+.unpadded {
     padding: 0;
     -webkit-padding-start: 0;
 }
