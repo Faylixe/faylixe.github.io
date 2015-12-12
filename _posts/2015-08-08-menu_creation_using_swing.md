@@ -2,7 +2,7 @@
 layout: post
 title:  "Menu creation using Swing"
 date:   2015-08-08 14:40:28
-categories: Java Swing Review
+tags: [java, swing, review]
 ---
 
 This review aims to introduce functional interface applied to a concrete application : creating menu with graphical API [Swing](https://docs.oracle.com/javase/tutorial/uiswing/).

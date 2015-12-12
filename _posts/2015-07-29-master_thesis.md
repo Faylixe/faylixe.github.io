@@ -2,7 +2,7 @@
 layout: post
 title:  "New localization dynamics for households and activities into urban area"
 date:   2015-07-29 14:40:28
-categories: master MATSim OperationResearch
+tags: [master, matsim, operation-research]
 ---
 
 I worked on this project as part of my master degree in software engineering,

@@ -2,7 +2,7 @@
 layout: post
 title: "Google Code Jam API"
 date: 2015-12-07 12:28:00
-categories: java maven google
+tags: [api, java, maven, googlecodejam]
 download-section: true
 repository-link: https://github.com/Faylixe/googlecodejam-client
 ---
