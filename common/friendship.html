@@ -14,47 +14,50 @@
   </head>
   <body>
     <script>
-    // Create canvas.
-    var canvas = d3.select("body").append("svg")
-      .attr("width", 1000)
-      .attr("height", 600);
-    var user = [];
-    var friendship = [];
-    function build() {
-      canvas
-        .selectAll(".nodes")
-        .data(user)
-        .enter()
-        .append("svg:circle");
-    }
-    function generateGraph() {
-        FB.login(function(){
-            FB.api("/me/friends", function(response) {
-              console.log(response);
-              for (var friend : response.data) {
-                friendship.push({
-                  source: "me",
-                  target: friend.name
-                })
-              }
-              d3.select(self.frameElement).style("height", diameter + "px");
-            })
-        }, { scope: 'publish_actions'});
+      // Create canvas.
+      var canvas = d3.select("body").append("svg")
+        .attr("width", 1000)
+        .attr("height", 600);
+      var user = [];
+      var friendship = [];
+      /**
+       *
+       */
+      function build() {
+        canvas
+          .selectAll(".nodes")
+          .data(user)
+          .enter()
+          .append("svg:circle");
       }
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1113461862037892',
-          xfbml      : true,
-          version    : 'v2.5'
-        });
-      };
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+      /**
+       *
+       */
+      function addUsers(users) {
+        build();
+      }
+
+      function generateGraph() {
+          FB.login(function(){
+              FB.api("/me/friends", function(response) {
+                addUsers(response.data);
+              })
+          }, { scope: 'publish_actions'});
+        }
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1113461862037892',
+            xfbml      : true,
+            version    : 'v2.5'
+          });
+        };
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
     </script>
     <button onclick="generateGraph()">Generate graph</button>
   </body>
