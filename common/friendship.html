@@ -18,22 +18,24 @@
       var canvas = d3.select("body").append("svg")
         .attr("width", 1000)
         .attr("height", 600);
-      var user = [];
+      var users = [];
       var friendship = [];
       /**
        *
        */
       function build() {
+        console.log(users);
         canvas
           .selectAll(".nodes")
-          .data(user)
+          .data(users)
           .enter()
           .append("svg:circle");
       }
       /**
        *
        */
-      function addUsers(users) {
+      function addUsers(data) {
+        users.push(data);
         build();
       }
 
