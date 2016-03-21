@@ -45,7 +45,7 @@
       function generateGraph() {
           FB.login(function(){
               FB.api("/me/friends", function(response) {
-                console.log("Response : " + response)
+                console.log(response)
                 addUsers(response.data);
               })
           }, { scope: 'user_friends'});
