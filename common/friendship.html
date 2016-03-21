@@ -35,7 +35,9 @@
        *
        */
       function addUsers(data) {
-        users.push(data);
+        for each (user in data) {
+          users.push(user);          
+        }
         build();
       }
 
@@ -44,7 +46,7 @@
               FB.api("/me/friends", function(response) {
                 addUsers(response.data);
               })
-          }, { scope: 'publish_actions'});
+          }, { scope: 'user_friends'});
         }
         window.fbAsyncInit = function() {
           FB.init({
