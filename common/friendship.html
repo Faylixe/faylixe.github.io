@@ -25,19 +25,20 @@
        */
       function build() {
         console.log(users);
-        canvas
+        var node = canvas
           .selectAll(".nodes")
           .data(users)
           .enter()
           .append("svg:circle");
+        node
+          .append("text")
+          .text(function(user) { return user.name; });
       }
       /**
        *
        */
       function addUsers(data) {
-        for each (user in data) {
-          users.push(user);          
-        }
+        users = users.concat(data);
         build();
       }
 
