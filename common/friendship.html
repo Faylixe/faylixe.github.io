@@ -4,21 +4,19 @@
   </head>
   <body>
     <script>
-    function buildGraph(data) {
-
-    }
-
+      function generateGraph() {
+        FB.login(function(){
+            FB.api("/101125490287972", function(response) {
+              console.log(response);
+            })
+        }, { scope: 'publish_actions'});
+      }
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '1113461862037892',
           xfbml      : true,
           version    : 'v2.5'
         });
-        FB.login(function(){
-            FB.api("/10152410359483844", function(response) {
-              console.log(response);
-            })
-        }, { scope: 'publish_actions'});
       };
       (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
@@ -28,5 +26,6 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
+    <button onclick="generateGraph()">Generate graph</button>
   </body>
 </html>
