@@ -4,6 +4,10 @@
   </head>
   <body>
     <script>
+    function buildGraph(data) {
+
+    }
+
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '1113461862037892',
@@ -11,7 +15,7 @@
           version    : 'v2.5'
         });
         FB.login(function(){
-            FB.api("/me/friends", function(response) {
+            FB.api("/1113461862037892/accounts/test-users", function(response) {
               console.log(response);
             })
         }, { scope: 'publish_actions'});
