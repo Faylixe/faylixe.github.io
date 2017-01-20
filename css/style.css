@@ -89,17 +89,21 @@ a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 
 #resume {
 	color: black;
+	padding: 5%;
 }
 
 #resume h1 {
 	text-decoration: bold;
-	font-size: 12pt;
+	font-size: 10pt;
 	display: block;
 	width: 100%;
 	border-bottom: 1px black solid;
 }
 
 #resume h2 {
-	text-decoration: bold;
-	font-size: 11pt;
+	text-decoration: italic;
+	font-size: 9pt;
 }
+
+#resume h2 .title {
+	text-decoration: bold;
