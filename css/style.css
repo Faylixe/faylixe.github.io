@@ -88,22 +88,24 @@ a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 }
 
 #resume {
-	color: black;
 	padding: 5%;
+	color: black;
+	font-size: 9pt;
 }
 
 #resume h1 {
 	text-decoration: bold;
-	font-size: 10pt;
+	font-size: 11pt;
 	display: block;
 	width: 100%;
 	border-bottom: 1px black solid;
 }
 
 #resume h2 {
-	text-decoration: italic;
-	font-size: 9pt;
+	text-decoration: none;
+	font-size: 10pt;
 }
 
 #resume h2 .title {
 	text-decoration: bold;
+}
