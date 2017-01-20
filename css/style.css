@@ -86,3 +86,11 @@ a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 	display: inline;
 	list-style-type: none;
 }
+
+#resume h1 {
+	text-decoration: bold;
+}
+
+#resume h2 {
+	text-decoration: bold;
+}
