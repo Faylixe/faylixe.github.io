@@ -87,12 +87,19 @@ a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 	list-style-type: none;
 }
 
+#resume {
+	color: black;
+}
+
 #resume h1 {
 	text-decoration: bold;
-	font-size: 10pt;
+	font-size: 12pt;
+	display: block;
+	width: 100%;
+	border-bottom: 1px black solid;
 }
 
 #resume h2 {
 	text-decoration: bold;
-	font-size: 10pt;
+	font-size: 11pt;
 }
