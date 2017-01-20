@@ -109,3 +109,7 @@ a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 .title {
 	font-weight: bold;
 }
+
+.tiny {
+	font-size: 7pt;
+}
