@@ -78,6 +78,10 @@ a:hover {
     -webkit-padding-start: 0;
 }
 
+.unpadded img {
+	width: 64px;
+}
+
 a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 	text-decoration: none;
 }
