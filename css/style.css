@@ -102,10 +102,10 @@ a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 }
 
 #resume h2 {
-	text-decoration: none;
+	font-weight: normal;
 	font-size: 10pt;
 }
 
-#resume h2 .title {
-	text-decoration: bold;
+.title {
+	font-weight: bold;
 }
