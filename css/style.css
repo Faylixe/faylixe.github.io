@@ -89,8 +89,10 @@ a.undecorated, a.undecorated:link, a.undecorated:visited, a.undecorated:hover {
 
 #resume h1 {
 	text-decoration: bold;
+	font-size: 10pt;
 }
 
 #resume h2 {
 	text-decoration: bold;
+	font-size: 10pt;
 }
